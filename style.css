@@ -1170,7 +1170,7 @@ section {
 
 .release-header {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1.3fr 1fr;
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
     position: relative;
@@ -1244,9 +1244,10 @@ section {
 }
 
 .platform-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-sm);
+    max-width: 300px;
 }
 
 .platform-button {
