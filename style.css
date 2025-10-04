@@ -1215,7 +1215,7 @@ section {
     font-weight: 600;
     font-size: 0.9rem;
     width: fit-content;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
 }
 
 .release-meta h1 {
