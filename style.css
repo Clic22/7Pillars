@@ -1175,8 +1175,8 @@ section {
     margin: 0 auto var(--spacing-md);
     position: relative;
     z-index: 1;
-    max-width: 900px;
-    align-items: center;
+    max-width: 650px;
+    align-items: end;
 }
 
 .release-artwork {
@@ -1203,7 +1203,7 @@ section {
 .release-meta {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-start;
 }
 
