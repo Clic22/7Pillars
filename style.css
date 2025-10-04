@@ -1176,7 +1176,7 @@ section {
     position: relative;
     z-index: 1;
     max-width: 900px;
-    align-items: end;
+    align-items: center;
 }
 
 .release-artwork {
@@ -1203,7 +1203,8 @@ section {
 .release-meta {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .release-year-badge {
@@ -1248,10 +1249,7 @@ section {
 }
 
 .streaming-links h3 {
-    font-size: 1.3rem;
-    margin-bottom: var(--spacing-md);
-    color: white;
-    text-align: center;
+    display: none;
 }
 
 .platform-grid {
