@@ -1235,7 +1235,7 @@ section {
 .release-artist {
     font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
 }
 
 .streaming-links h3 {
