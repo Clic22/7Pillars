@@ -604,8 +604,8 @@ section {
 }
 
 .release-cover {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 12px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -663,16 +663,10 @@ section {
     text-align: left;
 }
 
-.release-card:nth-child(odd) .release-links-main {
-    margin-top: var(--spacing-sm);
-    justify-content: flex-end;
-    flex-wrap: wrap;
-}
-
-.release-card:nth-child(even) .release-links-main {
-    margin-top: var(--spacing-sm);
-    justify-content: flex-start;
-    flex-wrap: wrap;
+.release-card:not(.featured) .release-links-main,
+.release-card:not(.featured) .more-platforms-btn,
+.release-card:not(.featured) .release-links-more {
+    display: none;
 }
 
 .release-card.featured .release-info {
