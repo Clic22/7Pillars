@@ -599,7 +599,7 @@ section {
 }
 
 .release-card:not(.featured) .release-links-main {
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
     justify-content: center;
 }
 
