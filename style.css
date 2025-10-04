@@ -606,7 +606,7 @@ section {
 .release-card.featured .release-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .release-type {
@@ -641,6 +641,11 @@ section {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    max-width: 280px;
+}
+
+.release-card.featured .platform-link {
+    width: 100%;
 }
 
 .release-links-more {
