@@ -1132,7 +1132,7 @@ section {
 
 /* Release Detail Pages */
 .release-detail {
-    padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
+    padding: calc(80px + var(--spacing-md)) 0 var(--spacing-xl);
     min-height: 100vh;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
     position: relative;
@@ -1158,7 +1158,7 @@ section {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     transition: var(--transition);
     position: relative;
     z-index: 1;
@@ -1176,6 +1176,7 @@ section {
     position: relative;
     z-index: 1;
     max-width: 900px;
+    align-items: end;
 }
 
 .release-artwork {
@@ -1201,10 +1202,7 @@ section {
 .release-meta {
     display: flex;
     flex-direction: column;
-}
-
-.streaming-links {
-    margin-top: auto;
+    justify-content: space-between;
 }
 
 .release-year-badge {
