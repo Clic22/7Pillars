@@ -502,7 +502,6 @@ section {
 
 .release-card:not(.featured) .release-card-link {
     padding: var(--spacing-md);
-    padding-bottom: var(--spacing-lg);
 }
 
 .release-card.featured .release-artwork-wrapper {
@@ -648,6 +647,7 @@ section {
     display: none;
     gap: var(--spacing-sm);
     margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -658,6 +658,7 @@ section {
 
 .more-platforms-btn {
     margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     padding: 0.7rem 1.5rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(196, 69, 54, 0.5);
