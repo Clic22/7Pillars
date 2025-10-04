@@ -503,20 +503,38 @@ section {
     padding: var(--spacing-md);
 }
 
-.release-card.featured .release-card-link {
-    display: contents;
-}
-
 .release-card.featured .release-artwork-wrapper {
     position: relative;
     border-radius: 15px;
     overflow: hidden;
 }
 
+.release-card.featured .release-artwork-wrapper a {
+    display: block;
+    transition: var(--transition);
+}
+
+.release-card.featured .release-artwork-wrapper a:hover {
+    transform: scale(1.03);
+}
+
 .release-card.featured .release-cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+.release-title-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition);
+}
+
+.release-title-link:hover h3 {
+    color: rgba(196, 69, 54, 1);
 }
 
 .release-year {
@@ -598,8 +616,12 @@ section {
 .release-links-main {
     display: flex;
     gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-sm);
     flex-wrap: wrap;
+}
+
+.release-card.featured .release-links-main {
+    margin-top: var(--spacing-md);
 }
 
 .release-links-more {
