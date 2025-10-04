@@ -1172,7 +1172,7 @@ section {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    margin: 0 auto var(--spacing-xl);
     position: relative;
     z-index: 1;
     max-width: 900px;
@@ -1361,6 +1361,7 @@ section {
 
 .release-content {
     max-width: 900px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
 }
