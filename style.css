@@ -1188,6 +1188,7 @@ section {
 
 .release-artwork img {
     width: 100%;
+    max-width: 350px;
     border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1274,6 +1275,7 @@ section {
     border: 1px solid;
     position: relative;
     overflow: hidden;
+    width: 160px;
 }
 
 .platform-button::before {
