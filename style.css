@@ -481,7 +481,7 @@ section {
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
     gap: var(--spacing-lg);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md) var(--spacing-lg);
     background: linear-gradient(135deg, rgba(196, 69, 54, 0.15) 0%, rgba(139, 47, 35, 0.1) 100%);
     border: 1px solid rgba(196, 69, 54, 0.3);
     overflow: visible;
