@@ -432,6 +432,21 @@ section {
     letter-spacing: 1px;
 }
 
+.release-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.release-card:hover .release-cover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 .release-info h3 {
     margin-bottom: var(--spacing-xs);
     color: var(--secondary-color);
