@@ -1175,6 +1175,7 @@ section {
     margin-bottom: var(--spacing-xl);
     position: relative;
     z-index: 1;
+    align-items: end;
 }
 
 .release-artwork {
