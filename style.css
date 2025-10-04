@@ -1479,8 +1479,8 @@ section {
 @media (max-width: 968px) {
     .release-header {
         gap: var(--spacing-md);
-        max-width: 100%;
-        padding: 0 var(--spacing-sm);
+        max-width: 450px;
+        margin: 0 auto var(--spacing-lg);
     }
 
     .release-artwork img {
@@ -1512,6 +1512,10 @@ section {
 }
 
 @media (max-width: 480px) {
+    .release-header {
+        max-width: 350px;
+    }
+
     .release-artwork img {
         max-width: 150px;
     }
