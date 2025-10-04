@@ -1478,9 +1478,11 @@ section {
 /* Release Detail Responsive */
 @media (max-width: 968px) {
     .release-header {
+        grid-template-columns: auto auto;
         gap: var(--spacing-md);
-        max-width: 450px;
+        max-width: 100%;
         margin: 0 auto var(--spacing-lg);
+        justify-content: center;
     }
 
     .release-artwork img {
@@ -1522,10 +1524,12 @@ section {
     }
 
     .release-header {
+        grid-template-columns: auto auto;
         width: 100%;
         max-width: none;
         margin: 0 0 var(--spacing-lg) 0;
         justify-content: center;
+        gap: var(--spacing-sm);
     }
 
     .release-artwork img {
