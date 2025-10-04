@@ -820,7 +820,6 @@ section {
 
 /* Spotify Embed */
 .spotify-embed {
-    margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
     text-align: center;
 }
