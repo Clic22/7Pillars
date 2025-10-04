@@ -1134,6 +1134,22 @@ section {
 .release-detail {
     padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
     min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.release-detail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(196, 69, 54, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(196, 69, 54, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .back-link {
@@ -1144,6 +1160,8 @@ section {
     font-weight: 600;
     margin-bottom: var(--spacing-lg);
     transition: var(--transition);
+    position: relative;
+    z-index: 1;
 }
 
 .back-link:hover {
@@ -1155,16 +1173,28 @@ section {
     grid-template-columns: 1fr 1.5fr;
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
+    position: relative;
+    z-index: 1;
 }
 
 .release-artwork {
     position: relative;
+    border-radius: 15px;
+    padding: 20px;
+    margin: -20px;
 }
 
 .release-artwork img {
     width: 100%;
     border-radius: 15px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.release-artwork:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 25px 60px rgba(196, 69, 54, 0.5),
+                0 0 60px rgba(196, 69, 54, 0.4);
 }
 
 .release-meta {
@@ -1189,12 +1219,12 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     margin-bottom: var(--spacing-xs);
-    color: var(--text-dark);
+    color: white;
 }
 
 .release-type-label {
     font-size: 1.2rem;
-    color: var(--secondary-color);
+    color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
@@ -1203,14 +1233,14 @@ section {
 
 .release-artist {
     font-size: 1.5rem;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: var(--spacing-lg);
 }
 
 .streaming-links h3 {
     font-size: 1.3rem;
     margin-bottom: var(--spacing-md);
-    color: var(--text-dark);
+    color: white;
 }
 
 .platform-grid {
@@ -1223,99 +1253,129 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     text-decoration: none;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: var(--transition);
-    border: 2px solid;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
 }
 
 .platform-button.spotify {
-    background: #1DB954;
-    color: white;
-    border-color: #1DB954;
+    background: rgba(29, 185, 84, 0.15);
+    color: #1DB954;
+    border-color: rgba(29, 185, 84, 0.5);
 }
 
 .platform-button.spotify:hover {
-    background: #1ed760;
+    background: #1DB954;
+    color: white;
+    border-color: #1DB954;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(29, 185, 84, 0.4);
 }
 
 .platform-button.apple {
-    background: #FA243C;
-    color: white;
-    border-color: #FA243C;
+    background: rgba(250, 36, 60, 0.15);
+    color: #FA243C;
+    border-color: rgba(250, 36, 60, 0.5);
 }
 
 .platform-button.apple:hover {
-    background: #ff4655;
+    background: #FA243C;
+    color: white;
+    border-color: #FA243C;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(250, 36, 60, 0.4);
 }
 
 .platform-button.youtube {
-    background: #FF0000;
-    color: white;
-    border-color: #FF0000;
+    background: rgba(255, 0, 0, 0.15);
+    color: #FF0000;
+    border-color: rgba(255, 0, 0, 0.5);
 }
 
 .platform-button.youtube:hover {
-    background: #cc0000;
+    background: #FF0000;
+    color: white;
+    border-color: #FF0000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
 }
 
 .platform-button.deezer {
-    background: #FF0092;
-    color: white;
-    border-color: #FF0092;
+    background: rgba(255, 0, 146, 0.15);
+    color: #FF0092;
+    border-color: rgba(255, 0, 146, 0.5);
 }
 
 .platform-button.deezer:hover {
-    background: #e6007a;
+    background: #FF0092;
+    color: white;
+    border-color: #FF0092;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 0, 146, 0.4);
 }
 
 .platform-button.amazon {
-    background: #FF9900;
-    color: white;
-    border-color: #FF9900;
+    background: rgba(255, 153, 0, 0.15);
+    color: #FF9900;
+    border-color: rgba(255, 153, 0, 0.5);
 }
 
 .platform-button.amazon:hover {
-    background: #e68a00;
+    background: #FF9900;
+    color: white;
+    border-color: #FF9900;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4);
 }
 
 .release-content {
     max-width: 900px;
+    position: relative;
+    z-index: 1;
 }
 
 .release-description {
-    background: white;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: var(--spacing-lg);
-    border-radius: 15px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
     margin-bottom: var(--spacing-lg);
 }
 
 .release-description h2 {
     font-size: 2rem;
     margin-bottom: var(--spacing-md);
-    color: var(--text-dark);
+    color: white;
 }
 
 .release-description p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-gray);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .release-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
 }
 
 .info-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: var(--spacing-lg);
-    border-radius: 15px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
 }
 
 .info-card h3 {
@@ -1327,7 +1387,7 @@ section {
 .info-card p {
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--text-gray);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0.5rem;
 }
 
@@ -1336,17 +1396,19 @@ section {
 }
 
 .lyrics-section {
-    background: white;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: var(--spacing-lg);
-    border-radius: 15px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
     margin-top: var(--spacing-lg);
 }
 
 .lyrics-section h2 {
     font-size: 2rem;
     margin-bottom: var(--spacing-lg);
-    color: var(--text-dark);
+    color: white;
 }
 
 .lyrics-content {
@@ -1370,7 +1432,7 @@ section {
 .lyrics-verse p,
 .lyrics-chorus p {
     line-height: 1.8;
-    color: var(--text-gray);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0.3rem;
 }
 
