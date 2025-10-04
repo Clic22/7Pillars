@@ -629,6 +629,13 @@ section {
 
 .release-card.featured .release-links-main {
     margin-top: var(--spacing-md);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.release-card.featured .platform-link {
+    width: 100%;
 }
 
 .release-links-more {
