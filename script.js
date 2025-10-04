@@ -133,3 +133,19 @@ const footerCopy = document.querySelector('.footer-copy');
 if (footerCopy) {
     footerCopy.textContent = `© ${currentYear} 7 Pillars. All rights reserved.`;
 }
+
+// Toggle more platforms
+document.querySelectorAll('.more-platforms-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const releaseInfo = this.closest('.release-info');
+        const moreLinks = releaseInfo.querySelector('.release-links-more');
+
+        moreLinks.classList.toggle('active');
+
+        if (moreLinks.classList.contains('active')) {
+            this.textContent = 'Less Platforms';
+        } else {
+            this.textContent = 'More Platforms';
+        }
+    });
+});

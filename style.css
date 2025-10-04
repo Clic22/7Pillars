@@ -467,11 +467,52 @@ section {
     margin: var(--spacing-sm) 0;
 }
 
-.release-links {
+.release-links-main {
     display: flex;
     gap: var(--spacing-sm);
     margin-top: var(--spacing-md);
     flex-wrap: wrap;
+}
+
+.release-links-more {
+    display: none;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.release-links-more.active {
+    display: flex;
+}
+
+.more-platforms-btn {
+    margin-top: var(--spacing-sm);
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.more-platforms-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.release-card.featured .more-platforms-btn {
+    border-color: white;
+    color: white;
+}
+
+.release-card.featured .more-platforms-btn:hover {
+    background: white;
+    color: var(--primary-color);
 }
 
 .platform-link {
@@ -519,6 +560,51 @@ section {
 
 .release-card.featured .platform-link.apple {
     color: #FA243C;
+}
+
+.platform-link.youtube {
+    background: #FF0000;
+    color: white;
+    border-color: #FF0000;
+}
+
+.platform-link.youtube:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+.platform-link.deezer {
+    background: #FF0092;
+    color: white;
+    border-color: #FF0092;
+}
+
+.platform-link.deezer:hover {
+    background: #e6007a;
+    transform: scale(1.05);
+}
+
+.platform-link.amazon {
+    background: #FF9900;
+    color: white;
+    border-color: #FF9900;
+}
+
+.platform-link.amazon:hover {
+    background: #e68a00;
+    transform: scale(1.05);
+}
+
+.release-card.featured .platform-link.youtube {
+    color: #FF0000;
+}
+
+.release-card.featured .platform-link.deezer {
+    color: #FF0092;
+}
+
+.release-card.featured .platform-link.amazon {
+    color: #FF9900;
 }
 
 /* Spotify Embed */
