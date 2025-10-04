@@ -413,7 +413,7 @@ section {
 }
 
 .release-card.featured {
-    grid-column: span 2;
+    grid-column: span 1;
     background: var(--gradient-1);
     color: white;
 }
@@ -600,12 +600,27 @@ section {
     color: #FF0000;
 }
 
+.release-card.featured .platform-link.youtube:hover {
+    background: #FF0000;
+    color: white;
+}
+
 .release-card.featured .platform-link.deezer {
     color: #FF0092;
 }
 
+.release-card.featured .platform-link.deezer:hover {
+    background: #FF0092;
+    color: white;
+}
+
 .release-card.featured .platform-link.amazon {
     color: #FF9900;
+}
+
+.release-card.featured .platform-link.amazon:hover {
+    background: #FF9900;
+    color: white;
 }
 
 /* Spotify Embed */
