@@ -435,6 +435,12 @@ section {
     position: relative;
 }
 
+.releases .release-card.featured {
+    grid-column: 1 / -1;
+    max-width: calc(100% - var(--spacing-lg) * 2);
+    margin: 0 auto;
+}
+
 .release-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
@@ -472,7 +478,6 @@ section {
 }
 
 .release-card.featured {
-    grid-column: span 3;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
