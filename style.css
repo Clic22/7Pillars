@@ -1243,7 +1243,7 @@ section {
 
 .release-detail .streaming-links {
     max-width: 900px;
-    margin: 0 auto var(--spacing-xl);
+    margin: 0 auto var(--spacing-md);
     position: relative;
     z-index: 1;
 }
