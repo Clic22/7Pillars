@@ -437,7 +437,7 @@ section {
 
 .releases .release-card.featured {
     grid-column: 1 / -1;
-    max-width: calc(100% - var(--spacing-lg) * 2);
+    max-width: calc(100% - var(--spacing-lg) * 4);
     margin: 0 auto;
 }
 
