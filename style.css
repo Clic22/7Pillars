@@ -1512,6 +1512,10 @@ section {
 }
 
 @media (max-width: 480px) {
+    .release-detail .container {
+        padding: 0 var(--spacing-xs);
+    }
+
     .release-header {
         max-width: 350px;
         margin: 0 auto var(--spacing-lg);
