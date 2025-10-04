@@ -1513,21 +1513,19 @@ section {
 
 @media (max-width: 480px) {
     .release-detail .container {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 0 var(--spacing-sm);
     }
 
     .back-link {
-        align-self: flex-start;
-        margin-left: var(--spacing-sm);
+        display: block;
+        margin-bottom: var(--spacing-md);
     }
 
     .release-header {
-        width: 90%;
-        max-width: 350px;
-        margin: 0 auto var(--spacing-lg);
+        width: 100%;
+        max-width: none;
+        margin: 0 0 var(--spacing-lg) 0;
+        justify-content: center;
     }
 
     .release-artwork img {
@@ -1546,16 +1544,8 @@ section {
         font-size: 1rem;
     }
 
-    .release-detail .streaming-links {
-        width: 90%;
-    }
-
     .platform-button {
         width: 120px;
         font-size: 0.7rem;
-    }
-
-    .release-content {
-        width: 90%;
     }
 }
