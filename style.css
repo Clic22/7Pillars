@@ -387,6 +387,9 @@ section {
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
 }
 
 .release-card::before {
@@ -421,6 +424,25 @@ section {
 .release-card.featured .release-type,
 .release-card.featured h3 {
     color: white;
+}
+
+.release-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: var(--spacing-sm);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+.release-card:hover .release-cover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.release-card.featured .release-cover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
 .release-year {
