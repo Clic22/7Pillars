@@ -1170,9 +1170,9 @@ section {
 
 .release-header {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: auto 1fr;
     gap: var(--spacing-lg);
-    margin: 0 auto var(--spacing-xl);
+    margin: 0 auto var(--spacing-md);
     position: relative;
     z-index: 1;
     max-width: 900px;
@@ -1202,7 +1202,7 @@ section {
 .release-meta {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .release-year-badge {
@@ -1239,17 +1239,26 @@ section {
     margin-bottom: var(--spacing-sm);
 }
 
+.release-detail .streaming-links {
+    max-width: 900px;
+    margin: 0 auto var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+}
+
 .streaming-links h3 {
     font-size: 1.3rem;
     margin-bottom: var(--spacing-md);
     color: white;
+    text-align: center;
 }
 
 .platform-grid {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--spacing-sm);
-    max-width: 300px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .platform-button {
