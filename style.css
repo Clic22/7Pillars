@@ -1175,7 +1175,6 @@ section {
     margin-bottom: var(--spacing-xl);
     position: relative;
     z-index: 1;
-    align-items: end;
 }
 
 .release-artwork {
@@ -1201,7 +1200,10 @@ section {
 .release-meta {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+}
+
+.streaming-links {
+    margin-top: auto;
 }
 
 .release-year-badge {
