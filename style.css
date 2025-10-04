@@ -479,6 +479,7 @@ section {
     padding: var(--spacing-lg);
     background: linear-gradient(135deg, rgba(196, 69, 54, 0.15) 0%, rgba(139, 47, 35, 0.1) 100%);
     border: 1px solid rgba(196, 69, 54, 0.3);
+    overflow: visible;
 }
 
 .release-card.featured:hover {
@@ -506,20 +507,12 @@ section {
 .release-card.featured .release-artwork-wrapper {
     position: relative;
     border-radius: 15px;
-    overflow: visible;
-    padding: 10px;
-    margin: -10px;
+    padding: 20px;
+    margin: -20px;
 }
 
 .release-card.featured .release-artwork-wrapper a {
     display: block;
-    transition: var(--transition);
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.release-card.featured .release-artwork-wrapper a:hover {
-    transform: scale(1.03);
 }
 
 .release-card.featured .release-cover {
@@ -528,6 +521,8 @@ section {
     object-fit: cover;
     display: block;
     border-radius: 15px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .release-title-link {
@@ -581,9 +576,11 @@ section {
     box-shadow: 0 20px 60px rgba(196, 69, 54, 0.4);
 }
 
+.release-card.featured:hover .release-cover,
 .release-card.featured .release-artwork-wrapper a:hover .release-cover {
-    box-shadow: 0 20px 60px rgba(196, 69, 54, 0.5),
-                0 0 40px rgba(196, 69, 54, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 25px 60px rgba(196, 69, 54, 0.5),
+                0 0 60px rgba(196, 69, 54, 0.4);
 }
 
 .release-info h3 {
