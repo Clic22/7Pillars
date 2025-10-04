@@ -592,13 +592,10 @@ section {
 
 .release-card:not(.featured) .release-info {
     padding: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 .release-card:not(.featured) .release-links-main {
-    margin-top: auto;
-    padding-top: var(--spacing-md);
+    margin-top: var(--spacing-lg);
     justify-content: center;
 }
 
