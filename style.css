@@ -430,6 +430,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
     position: relative;
 }
