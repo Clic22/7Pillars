@@ -502,6 +502,7 @@ section {
 
 .release-card:not(.featured) .release-card-link {
     padding: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
 }
 
 .release-card.featured .release-artwork-wrapper {
@@ -595,7 +596,7 @@ section {
 }
 
 .release-card:not(.featured) .release-links-main {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-md);
     justify-content: center;
 }
 
