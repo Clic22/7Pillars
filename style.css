@@ -1172,7 +1172,7 @@ section {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: var(--spacing-lg);
-    margin: 0 auto var(--spacing-md);
+    margin: 0 auto var(--spacing-lg);
     position: relative;
     z-index: 1;
     max-width: 650px;
@@ -1243,7 +1243,7 @@ section {
 
 .release-detail .streaming-links {
     max-width: 900px;
-    margin: 0 auto var(--spacing-md);
+    margin: 0 auto var(--spacing-lg);
     position: relative;
     z-index: 1;
 }
