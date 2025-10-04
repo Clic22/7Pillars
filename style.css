@@ -1478,29 +1478,58 @@ section {
 /* Release Detail Responsive */
 @media (max-width: 968px) {
     .release-header {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-md);
+        max-width: 100%;
+        padding: 0 var(--spacing-sm);
     }
 
-    .release-meta h1 {
-        font-size: 2.5rem;
+    .release-artwork img {
+        max-width: 200px;
     }
 
-    .platform-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
     .release-meta h1 {
         font-size: 2rem;
     }
 
+    .release-year-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
     .release-type-label {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .release-artist {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .platform-button {
+        width: 140px;
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .release-artwork img {
+        max-width: 150px;
+    }
+
+    .release-meta h1 {
+        font-size: 1.5rem;
+    }
+
+    .release-type-label {
+        font-size: 0.8rem;
+    }
+
+    .release-artist {
+        font-size: 1rem;
+    }
+
+    .platform-button {
+        width: 120px;
+        font-size: 0.7rem;
     }
 }
