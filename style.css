@@ -549,10 +549,22 @@ section {
 
 .social-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: var(--spacing-md);
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.social-links .social-card {
+    grid-column: span 2;
+}
+
+.social-links .social-card:nth-child(4) {
+    grid-column: 2 / 4;
+}
+
+.social-links .social-card:nth-child(5) {
+    grid-column: 4 / 6;
 }
 
 .social-card {
@@ -607,6 +619,22 @@ section {
 
 .twitter-card .social-icon {
     background: #000000;
+}
+
+.youtube-card .social-icon {
+    background: #FF0000;
+}
+
+.tiktok-card .social-icon {
+    background: #000000;
+}
+
+.threads-card .social-icon {
+    background: #000000;
+}
+
+.deezer-card .social-icon {
+    background: #FF0092;
 }
 
 .social-info h4 {
@@ -694,6 +722,16 @@ section {
     }
 }
 
+@media (max-width: 900px) {
+    .social-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .social-links .social-card {
+        grid-column: span 1 !important;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -742,9 +780,15 @@ section {
     .about-stats {
         flex-direction: column;
     }
+}
 
+@media (max-width: 600px) {
     .social-links {
         grid-template-columns: 1fr;
+    }
+
+    .social-links .social-card {
+        grid-column: span 1 !important;
     }
 }
 
