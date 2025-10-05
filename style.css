@@ -29,11 +29,24 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-light);
     overflow-x: hidden;
+}
+
+/* Prevent flash during image loading */
+.music img {
+    background-color: #0a0a0a;
+}
+
+.about img {
+    background-color: #ffffff;
+}
+
+.hero {
+    background-color: #0a0a0a;
 }
 
 .container {
@@ -54,7 +67,7 @@ h1 {
 
 h2 {
     font-size: clamp(2rem, 5vw, 3.5rem);
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 h3 {
@@ -174,7 +187,7 @@ h3 {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-photo.png') center/cover no-repeat;
+    background-color: #0a0a0a;
     color: var(--text-light);
     position: relative;
     overflow: hidden;
@@ -188,8 +201,22 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-photo.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: heroFadeIn 2.5s ease-out forwards;
     pointer-events: none;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .hero-content {
@@ -1364,7 +1391,7 @@ section {
 }
 
 .release-meta h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
     font-size: 3.5rem;
     margin-bottom: var(--spacing-xs);
     color: white;
