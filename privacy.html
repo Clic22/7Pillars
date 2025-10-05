@@ -16,7 +16,7 @@
 
     <!-- Custom Tarteaucitron Styling -->
     <style>
-        /* Overlay sombre derrière la popup */
+        /* Overlay élégant derrière la popup */
         #tarteaucitronRoot #tarteaucitronAlertBig:before {
             content: '';
             position: fixed;
@@ -24,123 +24,143 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7) !important;
+            background: linear-gradient(135deg, rgba(196, 69, 54, 0.95) 0%, rgba(42, 42, 42, 0.95) 100%) !important;
             z-index: -1;
-            backdrop-filter: blur(3px);
+            backdrop-filter: blur(10px);
         }
 
-        /* Popup principale (centrée) */
+        /* Popup principale - Design élégant */
         #tarteaucitronAlertBig {
             background: #ffffff !important;
             border: none !important;
-            border-radius: 20px !important;
-            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3) !important;
-            padding: 40px !important;
+            border-radius: 25px !important;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4) !important;
+            padding: 50px 45px 45px !important;
             font-family: 'Inter', sans-serif !important;
-            max-width: 550px !important;
+            max-width: 520px !important;
             margin: auto !important;
             position: fixed !important;
             top: 50% !important;
             left: 50% !important;
             transform: translate(-50%, -50%) !important;
             z-index: 999999 !important;
+            text-align: center !important;
         }
 
-        /* Accent rouge en haut de la popup */
-        #tarteaucitronAlertBig:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: #c44536;
-            border-radius: 20px 20px 0 0;
-        }
-
-        /* Titre du banner */
+        /* Titre élégant avec Playfair Display */
         #tarteaucitronDisclaimerAlert {
             color: #2a2a2a !important;
-            font-family: 'Inter', sans-serif !important;
-            font-size: 1.1rem !important;
-            font-weight: 600 !important;
-            margin-bottom: 15px !important;
+            font-family: 'Playfair Display', serif !important;
+            font-size: 2rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 20px !important;
+            line-height: 1.3 !important;
         }
 
-        /* Texte du banner */
-        #tarteaucitronAlertBig #tarteaucitronDisclaimerAlert strong {
+        /* Sous-titre/description */
+        #tarteaucitronAlertBig #tarteaucitronDisclaimerAlert + * {
+            color: #666666 !important;
+            font-size: 1rem !important;
+            line-height: 1.6 !important;
+            margin-bottom: 30px !important;
+        }
+
+        /* Texte avec accent rouge */
+        #tarteaucitronAlertBig strong {
             color: #c44536 !important;
+            font-weight: 600 !important;
         }
 
-        /* Boutons */
+        /* Container des boutons */
+        #tarteaucitronAlertBig #tarteaucitronPersonalize2 {
+            display: flex !important;
+            gap: 12px !important;
+            justify-content: center !important;
+            margin-top: 35px !important;
+            flex-wrap: wrap !important;
+        }
+
+        /* Style commun des boutons */
         #tarteaucitronAlertBig button,
         .tarteaucitronAllow,
         .tarteaucitronDeny {
             font-family: 'Inter', sans-serif !important;
             font-weight: 600 !important;
-            padding: 12px 30px !important;
+            padding: 16px 36px !important;
             border-radius: 50px !important;
             border: none !important;
             cursor: pointer !important;
-            transition: all 0.3s ease !important;
-            font-size: 0.95rem !important;
-            margin: 5px !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            font-size: 1rem !important;
+            letter-spacing: 0.3px !important;
+            min-width: 160px !important;
         }
 
-        /* Bouton "Tout accepter" */
+        /* Bouton "Tout accepter" - Principal */
         #tarteaucitronPersonalize,
         .tarteaucitronAllow {
-            background: #c44536 !important;
+            background: linear-gradient(135deg, #c44536 0%, #a33829 100%) !important;
             color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(196, 69, 54, 0.25) !important;
         }
 
         #tarteaucitronPersonalize:hover,
         .tarteaucitronAllow:hover {
-            background: #a33829 !important;
-            transform: translateY(-2px) !important;
-            box-shadow: 0 5px 15px rgba(196, 69, 54, 0.3) !important;
+            background: linear-gradient(135deg, #a33829 0%, #8b2f23 100%) !important;
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(196, 69, 54, 0.4) !important;
         }
 
-        /* Bouton "Tout refuser" */
+        /* Bouton "Tout refuser" - Secondaire */
         #tarteaucitronCloseAlert,
         .tarteaucitronDeny {
-            background: #2a2a2a !important;
-            color: #ffffff !important;
+            background: transparent !important;
+            color: #666666 !important;
+            border: 2px solid #e0e0e0 !important;
+            box-shadow: none !important;
         }
 
         #tarteaucitronCloseAlert:hover,
         .tarteaucitronDeny:hover {
-            background: #1a1a1a !important;
-            transform: translateY(-2px) !important;
-            box-shadow: 0 5px 15px rgba(42, 42, 42, 0.3) !important;
+            background: #f5f5f5 !important;
+            color: #2a2a2a !important;
+            border-color: #c44536 !important;
+            transform: translateY(-3px) !important;
         }
 
-        /* Bouton "Personnaliser" / "En savoir plus" */
+        /* Lien "En savoir plus" */
         #tarteaucitronPrivacyUrl,
         #tarteaucitronPrivacyUrlDialog {
-            color: #c44536 !important;
-            text-decoration: underline !important;
+            color: #666666 !important;
+            text-decoration: none !important;
             font-family: 'Inter', sans-serif !important;
             font-weight: 500 !important;
-            transition: color 0.3s ease !important;
+            font-size: 0.9rem !important;
+            transition: all 0.3s ease !important;
+            display: inline-block !important;
+            margin-top: 20px !important;
+            border-bottom: 1px solid transparent !important;
         }
 
         #tarteaucitronPrivacyUrl:hover,
         #tarteaucitronPrivacyUrlDialog:hover {
-            color: #f4a261 !important;
+            color: #c44536 !important;
+            border-bottom-color: #c44536 !important;
         }
 
         /* Icône de gestion des cookies (en bas à droite) */
         #tarteaucitronRoot #tarteaucitronIcon {
-            background: #c44536 !important;
+            background: linear-gradient(135deg, #c44536 0%, #a33829 100%) !important;
             border-radius: 50px !important;
-            padding: 10px 15px !important;
-            transition: all 0.3s ease !important;
+            padding: 12px 18px !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 4px 20px rgba(196, 69, 54, 0.3) !important;
         }
 
         #tarteaucitronRoot #tarteaucitronIcon:hover {
-            background: #f4a261 !important;
-            transform: scale(1.1) !important;
+            background: linear-gradient(135deg, #f4a261 0%, #c44536 100%) !important;
+            transform: scale(1.1) translateY(-2px) !important;
+            box-shadow: 0 6px 30px rgba(196, 69, 54, 0.4) !important;
         }
 
         /* Modal de personnalisation */
@@ -161,47 +181,46 @@
             font-weight: 500 !important;
         }
 
-        /* Container des boutons */
-        #tarteaucitronAlertBig #tarteaucitronPersonalize2 {
-            margin-top: 20px !important;
-        }
-
         /* Responsive mobile */
         @media (max-width: 768px) {
             #tarteaucitronAlertBig {
-                max-width: 90% !important;
-                padding: 30px 20px !important;
-                top: 50% !important;
-                transform: translate(-50%, -50%) !important;
+                max-width: 92% !important;
+                padding: 40px 30px 35px !important;
+                border-radius: 20px !important;
             }
 
             #tarteaucitronDisclaimerAlert {
-                font-size: 1rem !important;
+                font-size: 1.6rem !important;
+                margin-bottom: 16px !important;
+            }
+
+            #tarteaucitronAlertBig #tarteaucitronPersonalize2 {
+                flex-direction: column !important;
+                gap: 10px !important;
             }
 
             #tarteaucitronAlertBig button {
-                padding: 12px 20px !important;
-                font-size: 0.9rem !important;
+                padding: 14px 28px !important;
+                font-size: 0.95rem !important;
                 width: 100% !important;
-                margin: 8px 0 !important;
-                display: block !important;
+                min-width: auto !important;
             }
         }
 
-        /* Animation d'entrée de la popup */
+        /* Animation d'entrée élégante */
         @keyframes popupFadeIn {
-            from {
+            0% {
                 opacity: 0;
-                transform: translate(-50%, -45%);
+                transform: translate(-50%, -50%) scale(0.9);
             }
-            to {
+            100% {
                 opacity: 1;
-                transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%) scale(1);
             }
         }
 
         #tarteaucitronAlertBig {
-            animation: popupFadeIn 0.4s ease-out !important;
+            animation: popupFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
         }
     </style>
     <script>
