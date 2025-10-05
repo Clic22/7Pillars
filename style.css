@@ -1179,8 +1179,8 @@ section {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    .hero {
-        background-position: 45% center;
+    .hero::before {
+        background-position: 55% center;
     }
 
     .hero-buttons {
