@@ -66,7 +66,8 @@
         /* Bouton principal "Tout accepter" - GROS ET VISIBLE */
         #tarteaucitronPersonalize,
         .tarteaucitronAllow,
-        #tarteaucitronAlertBig button[onclick*="acceptAll"] {
+        #tarteaucitronAlertBig button[onclick*="acceptAll"],
+        button#tarteaucitronPersonalize {
             font-family: 'Inter', sans-serif !important;
             font-weight: 600 !important;
             padding: 14px 0 !important;
@@ -87,10 +88,28 @@
             color: #ffffff !important;
         }
 
-        /* Force le texte blanc sur tous les éléments du bouton accepter */
+        /* Force ABSOLUMENT le texte blanc sur le bouton accepter - TOUTES LES VARIANTES */
+        #tarteaucitronPersonalize,
         #tarteaucitronPersonalize *,
+        .tarteaucitronAllow,
         .tarteaucitronAllow *,
-        #tarteaucitronAlertBig button[onclick*="acceptAll"] * {
+        #tarteaucitronAlertBig button[onclick*="acceptAll"],
+        #tarteaucitronAlertBig button[onclick*="acceptAll"] *,
+        button#tarteaucitronPersonalize,
+        button#tarteaucitronPersonalize *,
+        #tarteaucitronAlertBig button,
+        #tarteaucitronAlertBig button *,
+        #tarteaucitronAlertBig .tarteaucitronAllow,
+        #tarteaucitronAlertBig .tarteaucitronAllow * {
+            color: #ffffff !important;
+        }
+
+        /* Force encore plus agressif */
+        button[id*="tarteaucitron"] {
+            color: #ffffff !important;
+        }
+
+        button[class*="tarteaucitron"] {
             color: #ffffff !important;
         }
 
@@ -201,6 +220,31 @@
             (tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel');
             tarteaucitron.user.facebookpixelId = '25106648848960359';
             tarteaucitron.user.facebookpixelMore = function () {};
+
+            // Force button text color après que Tarteaucitron ait créé la popup
+            setTimeout(function() {
+                const forceButtonTextWhite = function() {
+                    // Trouve tous les boutons possibles
+                    const buttons = document.querySelectorAll('#tarteaucitronAlertBig button, button[id*="tarteaucitron"], button[class*="tarteaucitron"]');
+                    buttons.forEach(function(btn) {
+                        // Force le style directement sur le bouton ET son contenu
+                        btn.style.setProperty('color', '#ffffff', 'important');
+                        if (btn.textContent.includes('Tout') || btn.textContent.includes('Accept')) {
+                            // C'est le bouton accepter, force aussi tous les enfants
+                            const allElements = btn.querySelectorAll('*');
+                            allElements.forEach(function(el) {
+                                el.style.setProperty('color', '#ffffff', 'important');
+                            });
+                        }
+                    });
+                };
+
+                // Appelle plusieurs fois pour être sûr
+                forceButtonTextWhite();
+                setTimeout(forceButtonTextWhite, 100);
+                setTimeout(forceButtonTextWhite, 500);
+                setTimeout(forceButtonTextWhite, 1000);
+            }, 100);
         })();
     </script>
 
