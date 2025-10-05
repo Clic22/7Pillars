@@ -1164,6 +1164,10 @@ section {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
+    .hero {
+        background-position: 45% center;
+    }
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
@@ -1176,6 +1180,60 @@ section {
 
     .about-stats {
         flex-direction: column;
+    }
+
+    /* Timeline mobile layout */
+    .releases::before {
+        display: none;
+    }
+
+    .release-card {
+        grid-template-columns: 1fr !important;
+        grid-template-areas: "cover" !important;
+        gap: var(--spacing-sm);
+    }
+
+    .release-card::before {
+        display: none;
+    }
+
+    .release-card:nth-child(odd) .release-card-link,
+    .release-card:nth-child(even) .release-card-link {
+        justify-self: center;
+    }
+
+    .release-card:nth-child(odd) .release-info:not(.release-card-link .release-info),
+    .release-card:nth-child(even) .release-info:not(.release-card-link .release-info) {
+        grid-column: 1;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .release-cover {
+        width: 180px;
+        height: 180px;
+    }
+
+    .release-card.featured .release-featured-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+        justify-items: center;
+        justify-self: center;
+    }
+
+    .release-card.featured .release-cover {
+        width: 180px;
+        height: 180px;
+    }
+
+    .release-card.featured .release-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .release-card.featured .release-links-main {
+        justify-content: center;
     }
 }
 
