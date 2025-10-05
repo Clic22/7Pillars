@@ -10,23 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Meta Pixel Code -->
+    <!-- Tarteaucitron.js for GDPR Compliance -->
+    <script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.17.0/tarteaucitron.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.17.0/css/tarteaucitron.min.css">
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '25106648848960359');
-    fbq('track', 'PageView');
+        tarteaucitron.init({
+            "privacyUrl": "privacy.html", /* Privacy policy url */
+            "hashtag": "#tarteaucitron", /* Open panel with this hashtag */
+            "cookieName": "tarteaucitron", /* Cookie name */
+            "orientation": "bottom", /* Banner position (top - bottom - middle) */
+            "groupServices": false, /* Group services by category */
+            "showAlertSmall": false, /* Show small banner on bottom right */
+            "cookieslist": true, /* Show cookies list */
+            "closePopup": false, /* Show close X button on banner */
+            "showIcon": true, /* Show cookie icon to manage cookies */
+            "iconPosition": "BottomRight", /* Position of cookie icon (BottomRight, BottomLeft, TopRight, TopLeft) */
+            "adblocker": false, /* Show message if adblocker is detected */
+            "DenyAllCta": true, /* Show Deny All button */
+            "AcceptAllCta": true, /* Show Accept All button */
+            "highPrivacy": true, /* Do not load services until user explicitly accepts */
+            "handleBrowserDNTRequest": false, /* Respect Do Not Track browser setting */
+            "removeCredit": true, /* Remove credit link */
+            "moreInfoLink": true, /* Show more info link */
+            "useExternalCss": false, /* Use external CSS */
+            "readmoreLink": "", /* Change the default readmore link */
+            "mandatory": false /* Show mandatory checkbox on services */
+        });
+
+        // Meta Pixel (Facebook Pixel)
+        (tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel');
+        tarteaucitron.user.facebookpixelId = '25106648848960359';
+        tarteaucitron.user.facebookpixelMore = function () {
+            // Additional events will be tracked in script.js
+        };
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=25106648848960359&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <!-- Navigation -->
@@ -322,7 +339,7 @@
             <div class="footer-content">
                 <div class="footer-logo">7 PILLARS</div>
                 <p class="footer-tagline">Two French guys making music in the cloud</p>
-                <p class="footer-copy">&copy; 2025 7 Pillars. All rights reserved.</p>
+                <p class="footer-copy">&copy; 2025 7 Pillars. All rights reserved. | <a href="privacy.html" style="color: inherit; text-decoration: underline;">Politique de confidentialité</a></p>
             </div>
         </div>
     </footer>
