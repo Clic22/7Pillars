@@ -13,6 +13,140 @@
     <!-- Tarteaucitron.js for GDPR Compliance -->
     <script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.17.0/tarteaucitron.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.17.0/css/tarteaucitron.min.css">
+
+    <!-- Custom Tarteaucitron Styling -->
+    <style>
+        /* Banner principal */
+        #tarteaucitronAlertBig {
+            background: #ffffff !important;
+            border-top: 3px solid #c44536 !important;
+            box-shadow: 0 -5px 40px rgba(0, 0, 0, 0.15) !important;
+            padding: 30px !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        /* Titre du banner */
+        #tarteaucitronDisclaimerAlert {
+            color: #2a2a2a !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            margin-bottom: 15px !important;
+        }
+
+        /* Texte du banner */
+        #tarteaucitronAlertBig #tarteaucitronDisclaimerAlert strong {
+            color: #c44536 !important;
+        }
+
+        /* Boutons */
+        #tarteaucitronAlertBig button,
+        .tarteaucitronAllow,
+        .tarteaucitronDeny {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            padding: 12px 30px !important;
+            border-radius: 50px !important;
+            border: none !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            font-size: 0.95rem !important;
+            margin: 5px !important;
+        }
+
+        /* Bouton "Tout accepter" */
+        #tarteaucitronPersonalize,
+        .tarteaucitronAllow {
+            background: #c44536 !important;
+            color: #ffffff !important;
+        }
+
+        #tarteaucitronPersonalize:hover,
+        .tarteaucitronAllow:hover {
+            background: #a33829 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 5px 15px rgba(196, 69, 54, 0.3) !important;
+        }
+
+        /* Bouton "Tout refuser" */
+        #tarteaucitronCloseAlert,
+        .tarteaucitronDeny {
+            background: #2a2a2a !important;
+            color: #ffffff !important;
+        }
+
+        #tarteaucitronCloseAlert:hover,
+        .tarteaucitronDeny:hover {
+            background: #1a1a1a !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 5px 15px rgba(42, 42, 42, 0.3) !important;
+        }
+
+        /* Bouton "Personnaliser" / "En savoir plus" */
+        #tarteaucitronPrivacyUrl,
+        #tarteaucitronPrivacyUrlDialog {
+            color: #c44536 !important;
+            text-decoration: underline !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 500 !important;
+            transition: color 0.3s ease !important;
+        }
+
+        #tarteaucitronPrivacyUrl:hover,
+        #tarteaucitronPrivacyUrlDialog:hover {
+            color: #f4a261 !important;
+        }
+
+        /* Icône de gestion des cookies (en bas à droite) */
+        #tarteaucitronRoot #tarteaucitronIcon {
+            background: #c44536 !important;
+            border-radius: 50px !important;
+            padding: 10px 15px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        #tarteaucitronRoot #tarteaucitronIcon:hover {
+            background: #f4a261 !important;
+            transform: scale(1.1) !important;
+        }
+
+        /* Modal de personnalisation */
+        #tarteaucitron {
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        #tarteaucitron .tarteaucitronMainLine .tarteaucitronName {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            color: #2a2a2a !important;
+        }
+
+        /* Boutons dans la modal */
+        #tarteaucitron .tarteaucitronMainLine button {
+            border-radius: 20px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 500 !important;
+        }
+
+        /* Container des boutons */
+        #tarteaucitronAlertBig #tarteaucitronPersonalize2 {
+            margin-top: 20px !important;
+        }
+
+        /* Responsive mobile */
+        @media (max-width: 768px) {
+            #tarteaucitronAlertBig {
+                padding: 20px !important;
+            }
+
+            #tarteaucitronAlertBig button {
+                padding: 10px 20px !important;
+                font-size: 0.9rem !important;
+                width: 100% !important;
+                margin: 5px 0 !important;
+            }
+        }
+    </style>
     <script>
         // Check if user is in GDPR region
         (async function() {
