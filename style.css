@@ -178,7 +178,7 @@ h3 {
     color: var(--text-light);
     position: relative;
     overflow: hidden;
-    padding-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
 }
 
 .hero::before {
