@@ -31,7 +31,7 @@
 
         /* Popup compacte et simple */
         #tarteaucitronAlertBig {
-            background: #ffffff !important;
+            background: #2a2a2a !important;
             border-radius: 15px !important;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
             padding: 30px !important;
@@ -47,7 +47,7 @@
 
         /* Titre simple */
         #tarteaucitronDisclaimerAlert {
-            color: #2a2a2a !important;
+            color: #ffffff !important;
             font-family: 'Inter', sans-serif !important;
             font-size: 1.1rem !important;
             font-weight: 600 !important;
@@ -57,7 +57,7 @@
 
         /* Texte descriptif */
         #tarteaucitronAlertBig #tarteaucitronDisclaimerAlert + * {
-            color: #666666 !important;
+            color: #d1d1d1 !important;
             font-size: 0.9rem !important;
             line-height: 1.5 !important;
             margin-bottom: 20px !important;
@@ -65,7 +65,8 @@
 
         /* Bouton principal "Tout accepter" - GROS ET VISIBLE */
         #tarteaucitronPersonalize,
-        .tarteaucitronAllow {
+        .tarteaucitronAllow,
+        #tarteaucitronAlertBig button[onclick*="acceptAll"] {
             font-family: 'Inter', sans-serif !important;
             font-weight: 600 !important;
             padding: 14px 0 !important;
@@ -83,6 +84,14 @@
         #tarteaucitronPersonalize:hover,
         .tarteaucitronAllow:hover {
             background: #a33829 !important;
+            color: #ffffff !important;
+        }
+
+        /* Force le texte blanc sur tous les éléments du bouton accepter */
+        #tarteaucitronPersonalize *,
+        .tarteaucitronAllow *,
+        #tarteaucitronAlertBig button[onclick*="acceptAll"] * {
+            color: #ffffff !important;
         }
 
         /* Bouton refuser - Petit et discret */
@@ -93,7 +102,7 @@
             padding: 0 !important;
             border: none !important;
             background: transparent !important;
-            color: #999999 !important;
+            color: #aaaaaa !important;
             font-size: 0.85rem !important;
             cursor: pointer !important;
             text-decoration: underline !important;
@@ -103,7 +112,7 @@
 
         #tarteaucitronCloseAlert:hover,
         .tarteaucitronDeny:hover {
-            color: #666666 !important;
+            color: #d1d1d1 !important;
         }
 
         /* Container des boutons */
@@ -115,7 +124,7 @@
         /* Lien "En savoir plus" */
         #tarteaucitronPrivacyUrl,
         #tarteaucitronPrivacyUrlDialog {
-            color: #999999 !important;
+            color: #aaaaaa !important;
             text-decoration: underline !important;
             font-family: 'Inter', sans-serif !important;
             font-size: 0.85rem !important;
@@ -125,7 +134,7 @@
 
         #tarteaucitronPrivacyUrl:hover,
         #tarteaucitronPrivacyUrlDialog:hover {
-            color: #c44536 !important;
+            color: #ffffff !important;
         }
 
         /* Icône cookies en bas à droite */
