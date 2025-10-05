@@ -109,12 +109,25 @@ window.addEventListener('scroll', () => {
 });
 
 
-// Platform link tracking (optional - for analytics)
-document.querySelectorAll('.platform-link, .social-card').forEach(link => {
+// Platform link tracking with Meta Pixel
+document.querySelectorAll('.platform-link, .platform-button').forEach(link => {
     link.addEventListener('click', function(e) {
         const platform = this.classList.contains('spotify') ? 'Spotify' :
                         this.classList.contains('apple') ? 'Apple Music' :
-                        this.textContent.trim();
+                        this.classList.contains('youtube') ? 'YouTube Music' :
+                        this.classList.contains('deezer') ? 'Deezer' :
+                        this.classList.contains('amazon') ? 'Amazon Music' : 'Unknown';
+
+        // Track with Meta Pixel
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'InitiateCheckout', {
+                content_name: platform,
+                content_category: 'Music Streaming',
+                value: 0,
+                currency: 'USD'
+            });
+        }
+
         console.log(`User clicked: ${platform}`);
     });
 });
