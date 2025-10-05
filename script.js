@@ -132,6 +132,30 @@ document.querySelectorAll('.platform-link, .platform-button').forEach(link => {
     });
 });
 
+// Social media link tracking with Meta Pixel
+document.querySelectorAll('.social-card').forEach(card => {
+    card.addEventListener('click', function(e) {
+        const platform = this.classList.contains('instagram-card') ? 'Instagram' :
+                        this.classList.contains('facebook-card') ? 'Facebook' :
+                        this.classList.contains('twitter-card') ? 'Twitter/X' :
+                        this.classList.contains('tiktok-card') ? 'TikTok' :
+                        this.classList.contains('threads-card') ? 'Threads' :
+                        this.classList.contains('youtube-card') ? 'YouTube' : 'Unknown';
+
+        // Track with Meta Pixel
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Contact', {
+                content_name: platform,
+                content_category: 'Social Media',
+                value: 0,
+                currency: 'USD'
+            });
+        }
+
+        console.log(`User clicked social: ${platform}`);
+    });
+});
+
 // Dynamic year update in footer
 const currentYear = new Date().getFullYear();
 const footerCopy = document.querySelector('.footer-copy');

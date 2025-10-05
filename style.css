@@ -962,22 +962,10 @@ section {
 
 .social-links {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
     max-width: 1000px;
     margin: 0 auto;
-}
-
-.social-links .social-card {
-    grid-column: span 2;
-}
-
-.social-links .social-card:nth-child(4) {
-    grid-column: 2 / 4;
-}
-
-.social-links .social-card:nth-child(5) {
-    grid-column: 4 / 6;
 }
 
 .social-card {
