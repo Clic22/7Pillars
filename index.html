@@ -14,35 +14,53 @@
     <script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.17.0/tarteaucitron.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.17.0/css/tarteaucitron.min.css">
     <script>
-        tarteaucitron.init({
-            "privacyUrl": "privacy.html", /* Privacy policy url */
-            "hashtag": "#tarteaucitron", /* Open panel with this hashtag */
-            "cookieName": "tarteaucitron", /* Cookie name */
-            "orientation": "bottom", /* Banner position (top - bottom - middle) */
-            "groupServices": false, /* Group services by category */
-            "showAlertSmall": false, /* Show small banner on bottom right */
-            "cookieslist": true, /* Show cookies list */
-            "closePopup": false, /* Show close X button on banner */
-            "showIcon": true, /* Show cookie icon to manage cookies */
-            "iconPosition": "BottomRight", /* Position of cookie icon (BottomRight, BottomLeft, TopRight, TopLeft) */
-            "adblocker": false, /* Show message if adblocker is detected */
-            "DenyAllCta": true, /* Show Deny All button */
-            "AcceptAllCta": true, /* Show Accept All button */
-            "highPrivacy": true, /* Do not load services until user explicitly accepts */
-            "handleBrowserDNTRequest": false, /* Respect Do Not Track browser setting */
-            "removeCredit": true, /* Remove credit link */
-            "moreInfoLink": true, /* Show more info link */
-            "useExternalCss": false, /* Use external CSS */
-            "readmoreLink": "", /* Change the default readmore link */
-            "mandatory": false /* Show mandatory checkbox on services */
-        });
+        // Check if user is in GDPR region
+        (async function() {
+            try {
+                const response = await fetch('/api/geo');
+                const data = await response.json();
 
-        // Meta Pixel (Facebook Pixel)
-        (tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel');
-        tarteaucitron.user.facebookpixelId = '25106648848960359';
-        tarteaucitron.user.facebookpixelMore = function () {
-            // Additional events will be tracked in script.js
-        };
+                // If user is NOT in a GDPR region, auto-accept all cookies
+                if (!data.requiresConsent) {
+                    // Set cookie to auto-accept
+                    document.cookie = 'tarteaucitron=!facebookpixel=true'; // Auto-accept Facebook Pixel
+                    console.log('Non-GDPR region detected (' + data.country + ') - cookies auto-accepted');
+                }
+            } catch (error) {
+                console.error('Geo detection failed, showing consent banner:', error);
+            }
+
+            // Initialize Tarteaucitron
+            tarteaucitron.init({
+                "privacyUrl": "privacy.html", /* Privacy policy url */
+                "hashtag": "#tarteaucitron", /* Open panel with this hashtag */
+                "cookieName": "tarteaucitron", /* Cookie name */
+                "orientation": "bottom", /* Banner position (top - bottom - middle) */
+                "groupServices": false, /* Group services by category */
+                "showAlertSmall": false, /* Show small banner on bottom right */
+                "cookieslist": true, /* Show cookies list */
+                "closePopup": false, /* Show close X button on banner */
+                "showIcon": true, /* Show cookie icon to manage cookies */
+                "iconPosition": "BottomRight", /* Position of cookie icon (BottomRight, BottomLeft, TopRight, TopLeft) */
+                "adblocker": false, /* Show message if adblocker is detected */
+                "DenyAllCta": true, /* Show Deny All button */
+                "AcceptAllCta": true, /* Show Accept All button */
+                "highPrivacy": true, /* Do not load services until user explicitly accepts */
+                "handleBrowserDNTRequest": false, /* Respect Do Not Track browser setting */
+                "removeCredit": true, /* Remove credit link */
+                "moreInfoLink": true, /* Show more info link */
+                "useExternalCss": false, /* Use external CSS */
+                "readmoreLink": "", /* Change the default readmore link */
+                "mandatory": false /* Show mandatory checkbox on services */
+            });
+
+            // Meta Pixel (Facebook Pixel)
+            (tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel');
+            tarteaucitron.user.facebookpixelId = '25106648848960359';
+            tarteaucitron.user.facebookpixelMore = function () {
+                // Additional events will be tracked in script.js
+            };
+        })();
     </script>
 </head>
 <body>

@@ -14,32 +14,50 @@
     <script src="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.17.0/tarteaucitron.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.17.0/css/tarteaucitron.min.css">
     <script>
-        tarteaucitron.init({
-            "privacyUrl": "privacy.html",
-            "hashtag": "#tarteaucitron",
-            "cookieName": "tarteaucitron",
-            "orientation": "bottom",
-            "groupServices": false,
-            "showAlertSmall": false,
-            "cookieslist": true,
-            "closePopup": false,
-            "showIcon": true,
-            "iconPosition": "BottomRight",
-            "adblocker": false,
-            "DenyAllCta": true,
-            "AcceptAllCta": true,
-            "highPrivacy": true,
-            "handleBrowserDNTRequest": false,
-            "removeCredit": true,
-            "moreInfoLink": true,
-            "useExternalCss": false,
-            "readmoreLink": "",
-            "mandatory": false
-        });
+        // Check if user is in GDPR region
+        (async function() {
+            try {
+                const response = await fetch('/api/geo');
+                const data = await response.json();
 
-        (tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel');
-        tarteaucitron.user.facebookpixelId = '25106648848960359';
-        tarteaucitron.user.facebookpixelMore = function () {};
+                // If user is NOT in a GDPR region, auto-accept all cookies
+                if (!data.requiresConsent) {
+                    // Set cookie to auto-accept
+                    document.cookie = 'tarteaucitron=!facebookpixel=true'; // Auto-accept Facebook Pixel
+                    console.log('Non-GDPR region detected (' + data.country + ') - cookies auto-accepted');
+                }
+            } catch (error) {
+                console.error('Geo detection failed, showing consent banner:', error);
+            }
+
+            // Initialize Tarteaucitron
+            tarteaucitron.init({
+                "privacyUrl": "privacy.html",
+                "hashtag": "#tarteaucitron",
+                "cookieName": "tarteaucitron",
+                "orientation": "bottom",
+                "groupServices": false,
+                "showAlertSmall": false,
+                "cookieslist": true,
+                "closePopup": false,
+                "showIcon": true,
+                "iconPosition": "BottomRight",
+                "adblocker": false,
+                "DenyAllCta": true,
+                "AcceptAllCta": true,
+                "highPrivacy": true,
+                "handleBrowserDNTRequest": false,
+                "removeCredit": true,
+                "moreInfoLink": true,
+                "useExternalCss": false,
+                "readmoreLink": "",
+                "mandatory": false
+            });
+
+            (tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel');
+            tarteaucitron.user.facebookpixelId = '25106648848960359';
+            tarteaucitron.user.facebookpixelMore = function () {};
+        })();
     </script>
 
     <style>
