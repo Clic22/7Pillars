@@ -1180,7 +1180,7 @@ section {
     }
 
     .hero::before {
-        background-position: 50% center;
+        background-position: 45% center;
     }
 
     .hero-buttons {
